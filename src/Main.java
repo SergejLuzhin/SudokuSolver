@@ -13,16 +13,17 @@ public class Main {
 
     public static void main(String[] args) {
         SudokuSolver sudokuSolver = new SudokuSolver();
-
         int[][] field_sudokued = sudokuSolver.sudoku(initial_field);
-
         for (int i = 0; i < 9; i++) {
             System.out.print("[");
             for (int j = 0; j < 9; j++) {
-                System.out.print(field_sudokued[i][j] + ", ");
+                if (j != 8) {
+                    System.out.print(field_sudokued[i][j] + ", ");
+                } else {
+                    System.out.print(field_sudokued[i][j]);
+                }
             }
             System.out.print("]\n");
         }
-
     }
 }
